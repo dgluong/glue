@@ -1,0 +1,24 @@
+{
+    "family": "glue",
+    "executionRoleArn": "arn:aws:iam::131301854901:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "glue",
+            "image": "131301854901.dkr.ecr.us-west-2.amazonaws.com/glue:latest",
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostPort": 5000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
